@@ -1,0 +1,36 @@
+body {
+    background-color: #F4C2DF;
+}
+div {
+    border-style: none;
+    border-color: #555555;
+    border-radius: 60px;
+    height: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 220px;
+    font-weight: bold;
+    color: #666666;
+}
+
+#calc-box {
+    padding-left:160px;
+    margin: 10px 10px 10px 10px;
+    width: 690px;
+    background-color: #F7D0D5;
+}
+#res-box {
+    padding-left:160px;
+    margin: 10px 10px 10px 10px;
+    width: 690px;
+    background-color: #FADECB;
+}
+.digit {
+    padding-left:64px;
+    margin: 10px 10px 10px 10px;
+    width: 211px;
+    cursor: pointer;
+    background-color: #FCECC0;
+}
+.digit:hover {
+    background-color: #FCAAC0;
+}
