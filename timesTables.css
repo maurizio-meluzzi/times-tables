@@ -1,36 +1,94 @@
 body {
     background-color: #F4C2DF;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #821f9d;
 }
-div {
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-box {
     border-style: none;
     border-color: #555555;
     border-radius: 60px;
+
+    margin: 10px 10px 10px 10px;
     height: 250px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 220px;
-    font-weight: bold;
-    color: #666666;
 }
 
 #calc-box {
     padding-left:160px;
-    margin: 10px 10px 10px 10px;
     width: 690px;
     background-color: #F7D0D5;
 }
+
 #res-box {
     padding-left:160px;
-    margin: 10px 10px 10px 10px;
     width: 690px;
     background-color: #FADECB;
 }
-.digit {
-    padding-left:64px;
-    margin: 10px 10px 10px 10px;
-    width: 211px;
-    cursor: pointer;
+
+.app-font {
+    font-size: 220px;
+}
+
+button {
+    width: 250px;
     background-color: #FCECC0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #821f9d;
 }
-.digit:hover {
-    background-color: #FCAAC0;
+
+#modal-ok, #modal-nok {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
 }
+
+#modal-ok {
+    background-color: rgb(0,255,0);
+    background-color: rgba(0,255,0,0.4);
+}
+
+#modal-nok {
+
+    background-color: rgb(255,0,0);
+    background-color: rgba(255,0,0,0.4);
+}
+
+.modal-table {
+    margin-top: 560px;
+    border-collapse: separate;
+    border-spacing: 16px;
+
+}
+
+table.modal-table td {
+    border-style: none;
+    border-color: #555555;
+    border-radius: 60px;
+
+    background-color: #FADECB;
+}
+
+#ok-row-01, #nok-row-01 {
+    padding-left: 50px;
+    font-size: 60px;
+}
+
+#ok-row-02, #nok-row-02 {
+    padding-left: 60px;
+    font-size: 110px;
+}
+
+

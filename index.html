@@ -5,43 +5,77 @@
 		<meta content="utf-8" http-equiv="encoding">
 		<link rel="stylesheet" href="timesTables.css">
 	</head>
-<body>
-	<!-- <div id="calc-box"></div> -->
-	<!-- <div id="res-box"></div> -->
-	<table>
 
-		<tr>
-			<td colspan="3">
-				<div id="calc-box"></div>
-			</td>
-		</tr>
+	<body>
+		<table class="center">
+			<tr>
+				<td colspan="3">
+					<div id="calc-box" class="app-box app-font"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div id="res-box" class="app-box app-font"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><button type="button" id="01" class="app-box app-font digit">1</button></td>
+				<td><button type="button" id="02" class="app-box app-font digit">2</button></td>
+				<td><button type="button" id="03" class="app-box app-font digit">3</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" id="04" class="app-box app-font digit">4</button></td>
+				<td><button type="button" id="05" class="app-box app-font digit">5</button></td>
+				<td><button type="button" id="06" class="app-box app-font digit">6</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" id="07" class="app-box app-font digit">7</button></td>
+				<td><button type="button" id="08" class="app-box app-font digit">8</button></td>
+				<td><button type="button" id="09" class="app-box app-font digit">9</button></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="button" id="00" class="app-box app-font digit">0</button></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</body>
 
-		<tr>
-			<td colspan="3">
-				<div id="res-box"></div>
-			</td>
-		</tr>
+	<div id="modal-ok">
+		<table class="modal-table center">
+			<tr>
+				<td rowspan="2" width="300" height="600">
+					<img src="imgs/ok.png" width="100%">
+				</td>
+				<td width="600">
+					<div id="ok-row-01">Ottimo!!</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="ok-row-02"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
 
-		<tr>
-			<td><div id="01" class="digit">1</div></td>
-			<td><div id="02" class="digit">2</div></td>
-			<td><div id="03" class="digit">3</div></td>
-		</tr>
-		<tr>
-			<td><div id="04" class="digit">4</div></td>
-			<td><div id="05" class="digit">5</div></td>
-			<td><div id="06" class="digit">6</div></td>
-		</tr>
-		<tr>
-			<td><div id="07" class="digit">7</div></td>
-			<td><div id="08" class="digit">8</div></td>
-			<td><div id="09" class="digit">9</div></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td><div id="00" class="digit">0</div></td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
-</body>
+	<div id="modal-nok">
+		<table class="modal-table center">
+			<tr>
+				<td rowspan="2" width="300" height="600">
+					<img src="imgs/nok.png" width="100%">
+				</td>
+				<td width="600">
+					<div id="nok-row-01">Mi dispiace...</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="nok-row-02"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
 <script src="timesTables.js"></script> 
+</html>
