@@ -13,11 +13,26 @@ body {
 
 .app-box {
     border-style: none;
-    border-color: #555555;
     border-radius: 60px;
 
     margin: 10px 10px 10px 10px;
     height: 250px;
+}
+
+.time-counter {
+    border-style: none;
+    border-radius: 8px;
+    height: 20px;
+    background-color: #FADECB;
+}
+#time-counter-td {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#time-counter-table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #calc-box {
@@ -45,7 +60,7 @@ button {
     color: #821f9d;
 }
 
-#modal-ok, #modal-nok {
+#modal-ok, #modal-nok, #modal-time-ended, #modal-welcome {
     display: none;
     position: fixed;
     z-index: 1;
@@ -60,10 +75,16 @@ button {
     background-color: rgba(0,255,0,0.4);
 }
 
-#modal-nok {
+
+#modal-nok, #modal-time-ended {
 
     background-color: rgb(255,0,0);
     background-color: rgba(255,0,0,0.4);
+}
+
+#modal-welcome {
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255,0.5);
 }
 
 .modal-table {
@@ -75,18 +96,17 @@ button {
 
 table.modal-table td {
     border-style: none;
-    border-color: #555555;
     border-radius: 60px;
 
     background-color: #FADECB;
 }
 
-#ok-row-01, #nok-row-01 {
+#ok-row-01, #nok-row-01, #te-row-01, #wl-row-01 {
     padding-left: 50px;
     font-size: 60px;
 }
 
-#ok-row-02, #nok-row-02 {
+#ok-row-02, #nok-row-02, #te-row-02, #wl-row-02 {
     padding-left: 60px;
     font-size: 110px;
 }

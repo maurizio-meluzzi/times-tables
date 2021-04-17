@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-		<meta content="utf-8" http-equiv="encoding">
+		<title>Welcome to TimesTables</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="timesTables.css">
 	</head>
 
@@ -16,6 +16,24 @@
 			<tr>
 				<td colspan="3">
 					<div id="res-box" class="app-box app-font"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" id="time-counter-td">
+					<table id="time-counter-table">
+						<tr>
+							<td><div id="time-counter-1" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-2" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-3" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-4" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-5" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-6" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-7" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-8" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-9" class="time-counter">&nbsp;</div></td>
+							<td><div id="time-counter-10" class="time-counter">&nbsp;</div></td>
+						</tr>
+					</table>
 				</td>
 			</tr>
 			<tr>
@@ -39,43 +57,82 @@
 				<td>&nbsp;</td>
 			</tr>
 		</table>
+
+
+
+		<div id="modal-ok">
+			<table class="modal-table center">
+				<tr>
+					<td rowspan="2" width="300" height="600">
+						<img src="imgs/ok.png" width="100%">
+					</td>
+					<td width="600">
+						<div id="ok-row-01">Ottimo!!</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="ok-row-02"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="modal-nok">
+			<table class="modal-table center">
+				<tr>
+					<td rowspan="2" width="300" height="600">
+						<img src="imgs/nok.png" width="100%">
+					</td>
+					<td width="600">
+						<div id="nok-row-01">Mi dispiace...</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="nok-row-02"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="modal-time-ended">
+			<table class="modal-table center">
+				<tr>
+					<td rowspan="2" width="300" height="600">
+						<img src="imgs/nok.png" width="100%">
+					</td>
+					<td width="600">
+						<div id="te-row-01">Tempo scaduto...</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="te-row-02"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="modal-welcome">
+			<table class="modal-table center">
+				<tr>
+					<td rowspan="2" width="300" height="600">
+						<img src="imgs/ok.png" width="100%">
+					</td>
+					<td width="600">
+						<div id="wl-row-01"></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="wl-row-02">Benvenuto!</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
 	</body>
 
-	<div id="modal-ok">
-		<table class="modal-table center">
-			<tr>
-				<td rowspan="2" width="300" height="600">
-					<img src="imgs/ok.png" width="100%">
-				</td>
-				<td width="600">
-					<div id="ok-row-01">Ottimo!!</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div id="ok-row-02"></div>
-				</td>
-			</tr>
-		</table>
-	</div>
-
-	<div id="modal-nok">
-		<table class="modal-table center">
-			<tr>
-				<td rowspan="2" width="300" height="600">
-					<img src="imgs/nok.png" width="100%">
-				</td>
-				<td width="600">
-					<div id="nok-row-01">Mi dispiace...</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div id="nok-row-02"></div>
-				</td>
-			</tr>
-		</table>
-	</div>
-
-<script src="timesTables.js"></script> 
+	<script src="timesTables.js"></script> 
 </html>
