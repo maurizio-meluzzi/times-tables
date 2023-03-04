@@ -19,7 +19,7 @@ clockSound.setAttribute("controls", "none");
 clockSound.style.display = "none";
 document.body.appendChild(clockSound);
 
-const lastTimesTable = 7;
+const lastTimesTable = 9;
 
 let result       = '';
 let resultDigits = 0;
@@ -104,10 +104,13 @@ function closeModal() {
 // ----------------------------------------------------------------
 // question generator
 function generateCalc() {
-	// GET RAND <= 4 (>=0)
-    let x = Math.floor(Math.random() * (lastTimesTable))+1;
-    // GET RAND <= 10 (>=0)
-    let y = Math.floor(Math.random() * 11);
+
+    // 0+3  ---- 6 + 3
+    // 3    ---- 9
+	// GET RAND <= 9 (>=3)
+    let x = Math.floor(Math.random() * 6) + 3;
+    // GET RAND <= 9 (>=3)
+    let y = Math.floor(Math.random() * 6) + 3;
 
     calcBox.innerHTML = x + ' x ' + y;
     result = '' + (x*y);
