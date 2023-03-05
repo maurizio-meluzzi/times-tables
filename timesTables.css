@@ -60,6 +60,12 @@ button {
     color: #821f9d;
 }
 
+button.digit.pressed {
+  transform: translateY(2px);
+  box-shadow: inset 0px 2px 0px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0, 0, 0, 0.25);
+  background-color: #ddd;
+}
+
 #modal-ok, #modal-nok, #modal-time-ended, #modal-welcome {
     display: none;
     position: fixed;
@@ -110,5 +116,4 @@ table.modal-table td {
     padding-left: 60px;
     font-size: 110px;
 }
-
 

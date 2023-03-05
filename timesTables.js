@@ -31,11 +31,21 @@ let cellShutter;
 // ----------------------------------------------------------------
 // get buttons and bind them
 let digitBtns = document.getElementsByClassName('digit');
+
 for (let i = 0; i < digitBtns.length; i++) {
+    digitBtns[i].addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        digitBtns[i].classList.add('pressed');
+    });
+    digitBtns[i].addEventListener("touchend", function() {
+        digitBtns[i].classList.remove('pressed');
+        keyPressed(digitBtns[i].innerHTML);
+    });
     digitBtns[i].addEventListener("click", function() {
         keyPressed(digitBtns[i].innerHTML);
     });
 }
+
 
 // ----------------------------------------------------------------
 // bind close modal event
