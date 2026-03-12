@@ -2,8 +2,8 @@ services:
   web:
     container_name: timestables-web
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: dckr/Dockerfile
     ports:
       - "0.0.0.0:8080:80"
     restart: unless-stopped
