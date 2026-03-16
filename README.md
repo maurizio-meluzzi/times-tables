@@ -26,9 +26,13 @@ TimesTables is an educational game designed to help children practice multiplica
 **Avvio con Docker:**
 Dalla root del progetto:
 ```bash
-docker-compose -f dckr/docker-compose.yml up -d
+docker compose -f dckr/docker-compose.yml up -d
 ```
-Una volta eseguito il container il gioco sarà raggiungibile tramite `http://localhost:8080`
+Una volta eseguito il container il gioco sarà raggiungibile tramite:
+- `http://localhost:8080` (accesso locale)
+- `http://<YOUR_IP>:8080` (accesso da altri dispositivi nella stessa rete, es. smartphone)
+
+Per conoscere il tuo IP locale: `hostname -I | awk '{print $1}'`
 
 
 ### Technical Details 🇬🇧
@@ -49,6 +53,10 @@ Una volta eseguito il container il gioco sarà raggiungibile tramite `http://loc
 **Running with Docker:**
 From the project root:
 ```bash
-docker-compose -f dckr/docker-compose.yml up -d
+docker compose -f dckr/docker-compose.yml up -d
 ```
-Once the container is running the game will be accessible at `http://localhost:8080`
+Once the container is running the game will be accessible at:
+- `http://localhost:8080` (local access)
+- `http://<YOUR_IP>:8080` (access from other devices on the same network, e.g. smartphone)
+
+To get your local IP: `hostname -I | awk '{print $1}'`
