@@ -26,13 +26,9 @@ TimesTables is an educational game designed to help children practice multiplica
 **Avvio con Docker:**
 Dalla root del progetto:
 ```bash
-docker compose -f dckr/docker-compose.yml up -d
+docker-compose -f dckr/docker-compose.yml up -d
 ```
-Una volta eseguito il container il gioco sarà raggiungibile tramite:
-- `http://localhost:8080` (accesso locale)
-- `http://<YOUR_IP>:8080` (accesso da altri dispositivi nella stessa rete, es. smartphone)
-
-Per conoscere il tuo IP locale: `hostname -I | awk '{print $1}'`
+Una volta eseguito il container il gioco sarà raggiungibile tramite `http://localhost:8080`
 
 
 ### Technical Details 🇬🇧
@@ -53,10 +49,27 @@ Per conoscere il tuo IP locale: `hostname -I | awk '{print $1}'`
 **Running with Docker:**
 From the project root:
 ```bash
-docker compose -f dckr/docker-compose.yml up -d
+docker-compose -f dckr/docker-compose.yml up -d
 ```
-Once the container is running the game will be accessible at:
-- `http://localhost:8080` (local access)
-- `http://<YOUR_IP>:8080` (access from other devices on the same network, e.g. smartphone)
+Once the container is running the game will be accessible at `http://localhost:8080`
 
-To get your local IP: `hostname -I | awk '{print $1}'`
+
+---
+
+## Licenza 🇮🇹
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+Questo progetto è distribuito sotto licenza [GNU General Public License v3.0](LICENSE).  
+Il codice è libero, aperto e tale deve restare: chiunque può usarlo, modificarlo e redistribuirlo,
+a condizione che i lavori derivati restino anch'essi liberi e aperti.  
+Il gioco è e rimarrà sempre gratuito, senza pubblicità e senza raccolta di dati.
+
+## License 🇬🇧
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+This project is distributed under the [GNU General Public License v3.0](LICENSE).  
+The code is free, open, and must remain so: anyone can use, modify, and redistribute it,
+provided that derivative works are also kept free and open.  
+The game is and will always remain free, ad-free, and without any data collection.
