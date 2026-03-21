@@ -26,9 +26,10 @@ import * as countdown from './countdown.js';
 import * as input from './input.js';
 import * as ui from './ui.js';
 
-// Game configuration
-const tablesFrom = 2;
-const tablesTo = 10;
+// Tables included in the current session (any subset of 1–12)
+const sessionTables = [1, 2, 3, 4];
+// Max second factor: 10 for beginners, 11 or 12 for full tables
+const sessionMaxFactor = 10;
 
 // Game state
 let currentOperation = null;
@@ -38,6 +39,9 @@ let givenDigits = 0;
  * Initialize the game.
  */
 export function init() {
+    // Initialise the operation engine for this session
+    engine.initEngine({ tables: sessionTables, maxFactor: sessionMaxFactor });
+
     // Bind input handlers
     input.init(handleDigitPress);
     
@@ -53,7 +57,7 @@ export function init() {
  */
 function startNewQuestion() {
     // Generate new operation
-    currentOperation = engine.generateOperation(tablesFrom, tablesTo);
+    currentOperation = engine.generateOperation();
     
     // Reset given digits counter
     givenDigits = 0;
