@@ -20,7 +20,7 @@ TimesTables is an educational game designed to help children practice multiplica
 ```
 
 - **`public/`** - Contiene tutti i file del gioco: HTML, CSS, JavaScript vanilla, immagini e file audio. È il contenuto servito dal web server.
-- **`dckr/`** - Configurazione Docker con Dockerfile e docker-compose.yml per creare un container nginx che serve l'applicazione. Utile per l'esecuzione in locale (test, sviluppo).
+- **`dckr/`** - Configurazione Docker con docker-compose.yml per avviare un container `nginx:alpine` che serve l'applicazione. Utile per l'esecuzione in locale (test, sviluppo).
 - **`docs_notes/`** - Documentazione e note di sviluppo.
 
 **Avvio con Docker:**
@@ -43,7 +43,7 @@ Una volta eseguito il container il gioco sarà raggiungibile tramite `http://loc
 ```
 
 - **`public/`** - Contains all game files: HTML, CSS, vanilla JavaScript, images and audio files. This is the content served by the web server.
-- **`dckr/`** - Docker configuration with Dockerfile and docker-compose.yml to create an nginx container serving the application. Useful to run locally (test, development).
+- **`dckr/`** - Docker configuration with docker-compose.yml to run a `nginx:alpine` container serving the application. Useful to run locally (test, development).
 - **`docs_notes/`** - Development documentation and notes.
 
 **Running with Docker:**

@@ -26,6 +26,10 @@ import * as countdown from './countdown.js';
 import * as input from './input.js';
 import * as ui from './ui.js';
 
+// Game configuration
+const tablesFrom = 2;
+const tablesTo = 10;
+
 // Game state
 let currentOperation = null;
 let givenDigits = 0;
@@ -49,7 +53,7 @@ export function init() {
  */
 function startNewQuestion() {
     // Generate new operation
-    currentOperation = engine.generateOperation();
+    currentOperation = engine.generateOperation(tablesFrom, tablesTo);
     
     // Reset given digits counter
     givenDigits = 0;

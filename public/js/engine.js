@@ -29,7 +29,7 @@
  * @returns {Object} - { x, y, result, resultDigits }
  */
 export function generateOperation(min = 3, max = 8) {
-    // Calculate the range: max is 8, min is 3, so range = 6
+    // Calculate the range
     const range = max - min + 1;
     
     // Get random number between min and max (inclusive)
