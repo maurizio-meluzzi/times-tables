@@ -22,6 +22,10 @@
  */
 
 import * as game from './game.js';
+import { init as initI18n } from './i18n/i18n.js';
+
+// Apply translations before starting the game
+await initI18n();
 
 // Start the game
 game.init();
