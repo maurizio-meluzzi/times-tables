@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+  Le Tabelline - Times Tables learning game for children
+  Copyright (C) 2025  Maurizio Meluzzi
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="it">
+	<head>
+		<title>Welcome to TimesTables</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/timesTables.css?v=2">
+	</head>
+
+	<body>
+		<div id="app-layout">
+			<div id="app-left">
+				<button type="button" id="btn-exit">Esci</button>
+				<div id="calc-box" class="app-box app-font"></div>
+				<div id="res-box" class="app-box app-font"></div>
+				<div id="time-counter-wrap">
+					<div id="time-counter-1" class="time-counter">&nbsp;</div>
+					<div id="time-counter-2" class="time-counter">&nbsp;</div>
+					<div id="time-counter-3" class="time-counter">&nbsp;</div>
+					<div id="time-counter-4" class="time-counter">&nbsp;</div>
+					<div id="time-counter-5" class="time-counter">&nbsp;</div>
+					<div id="time-counter-6" class="time-counter">&nbsp;</div>
+					<div id="time-counter-7" class="time-counter">&nbsp;</div>
+					<div id="time-counter-8" class="time-counter">&nbsp;</div>
+					<div id="time-counter-9" class="time-counter">&nbsp;</div>
+					<div id="time-counter-10" class="time-counter">&nbsp;</div>
+				</div>
+			</div>
+			<div id="app-right">
+				<button type="button" id="01" class="app-box app-font digit">1</button>
+				<button type="button" id="02" class="app-box app-font digit">2</button>
+				<button type="button" id="03" class="app-box app-font digit">3</button>
+				<button type="button" id="04" class="app-box app-font digit">4</button>
+				<button type="button" id="05" class="app-box app-font digit">5</button>
+				<button type="button" id="06" class="app-box app-font digit">6</button>
+				<button type="button" id="07" class="app-box app-font digit">7</button>
+				<button type="button" id="08" class="app-box app-font digit">8</button>
+				<button type="button" id="09" class="app-box app-font digit">9</button>
+				<div class="keypad-spacer"></div>
+				<button type="button" id="00" class="app-box app-font digit">0</button>
+				<div class="keypad-spacer"></div>
+			</div>
+		</div>
+
+		<div id="modal-ok">
+			<div class="modal-inner">
+				<div class="modal-img-wrap">
+					<img src="imgs/ok.png" alt="">
+				</div>
+				<div class="modal-text-wrap">
+					<div id="ok-row-01">Ottimo!!</div>
+					<div id="ok-row-02"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-nok">
+			<div class="modal-inner">
+				<div class="modal-img-wrap">
+					<img src="imgs/nok.png" alt="">
+				</div>
+				<div class="modal-text-wrap">
+					<div id="nok-row-01">Mi dispiace...</div>
+					<div id="nok-row-02"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-time-ended">
+			<div class="modal-inner">
+				<div class="modal-img-wrap">
+					<img src="imgs/nok.png" alt="">
+				</div>
+				<div class="modal-text-wrap">
+					<div id="te-row-01">Tempo scaduto...</div>
+					<div id="te-row-02"></div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script type="module" src="js/main.js?v=2"></script>
+</html>

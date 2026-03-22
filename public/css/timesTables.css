@@ -68,6 +68,7 @@ body {
     padding: 0 clamp(12px, 5vw, 160px);
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #F7D0D5;
     font-size: clamp(2rem, 12vw, 220px);
 }
@@ -78,6 +79,7 @@ body {
     padding: 0 clamp(12px, 5vw, 160px);
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #FADECB;
     font-size: clamp(1.5rem, 10vw, 220px);
 }
@@ -181,6 +183,12 @@ button.digit.pressed {
         font-size: clamp(1.5rem, 6vw, 200px);
     }
 
+    #btn-exit {
+        height: clamp(44px, 22dvh, 250px);
+        font-size: clamp(1rem, 4vw, 56px);
+        padding-right: clamp(10px, 2vw, 60px);
+    }
+
     #time-counter-wrap {
         width: 100%;
         gap: clamp(2px, 0.5vw, 8px);
@@ -200,7 +208,7 @@ button.digit.pressed {
    MODALS
    ============================================================ */
 
-#modal-ok, #modal-nok, #modal-time-ended, #modal-welcome {
+#modal-ok, #modal-nok, #modal-time-ended {
     display: none;
     position: fixed;
     z-index: 1;
@@ -211,15 +219,11 @@ button.digit.pressed {
 }
 
 #modal-ok {
-    background-color: rgba(0, 255, 0, 0.4);
+    background-color: rgba(0, 255, 0, 0.5);
 }
 
 #modal-nok, #modal-time-ended {
-    background-color: rgba(255, 0, 0, 0.4);
-}
-
-#modal-welcome {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 /* modal content card — absolutely centred within the fixed overlay */
@@ -231,17 +235,17 @@ button.digit.pressed {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: clamp(12px, 3vw, 48px);
+    gap: clamp(13px, 3.3vw, 53px);
     background-color: #FADECB;
     border-radius: clamp(16px, 4vw, 60px);
-    padding: clamp(16px, 3vw, 48px);
-    max-width: 92vw;
-    max-height: 88dvh;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding: clamp(18px, 3.3vw, 53px);
+    max-width: 100vw;
+    max-height: 97dvh;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.30);
 }
 
 .modal-img-wrap img {
-    width: clamp(80px, 18vw, 280px);
+    width: clamp(88px, 19.8vw, 308px);
     height: auto;
     display: block;
 }
@@ -256,7 +260,29 @@ button.digit.pressed {
     font-size: clamp(1.2rem, 5vw, 60px);
 }
 
-#ok-row-02, #nok-row-02, #te-row-02, #wl-row-02 {
+#ok-row-02, #nok-row-02, #te-row-02 {
     font-size: clamp(1.5rem, 8vw, 110px);
+}
+
+/* ============================================================
+   EXIT BUTTON (game.html)
+   ============================================================ */
+
+#btn-exit {
+    width: 100%;
+    height: clamp(44px, 13vw, 250px);
+    border-radius: clamp(12px, 4vw, 60px);
+    background-color: #F7D0D5;
+    color: #821f9d;
+    font-weight: bold;
+    font-size: clamp(1rem, 5.5vw, 56px);
+    cursor: pointer;
+    text-align: right;
+    padding-right: clamp(12px, 5vw, 160px);
+}
+
+#btn-exit:hover,
+#btn-exit:active {
+    background-color: #f0b8c0;
 }
 
