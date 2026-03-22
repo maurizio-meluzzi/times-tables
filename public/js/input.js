@@ -32,21 +32,29 @@ export function init(onDigitPressed) {
     for (let i = 0; i < digitBtns.length; i++) {
         const btn = digitBtns[i];
         
-        // Touch start: add visual feedback
+        // Touch start: add visual feedback and block the synthetic mouse/click event
         btn.addEventListener("touchstart", function(e) {
             e.preventDefault();
             btn.classList.add('pressed');
-        });
+        }, { passive: false });
         
-        // Touch end: remove visual feedback and trigger callback
-        btn.addEventListener("touchend", function() {
+        // Touch end: remove visual feedback and trigger callback.
+        // preventDefault() here prevents any residual synthetic click in edge cases.
+        btn.addEventListener("touchend", function(e) {
+            e.preventDefault();
             btn.classList.remove('pressed');
             if (onDigitPressed) {
                 onDigitPressed(btn.innerHTML);
             }
         });
         
-        // Click: trigger callback
+        // Touch cancel: finger left the element — remove pressed state, no callback
+        btn.addEventListener("touchcancel", function() {
+            btn.classList.remove('pressed');
+        });
+        
+        // Click: trigger callback for mouse and keyboard only.
+        // After a touch interaction, preventDefault() on touchstart suppresses this event.
         btn.addEventListener("click", function() {
             if (onDigitPressed) {
                 onDigitPressed(btn.innerHTML);
