@@ -47,9 +47,12 @@ export function init() {
     
     // Bind modal close handlers
     ui.bindModalClose(handleModalClose);
+
+    // Bind exit button
+    ui.bindExitButton(exitGame);
     
-    // Show welcome modal
-    ui.showWelcomeModal();
+    // Start immediately — no welcome screen here, landing page is index.html
+    startNewQuestion();
 }
 
 /**
@@ -119,6 +122,15 @@ function handleCountdownTick(remaining) {
  */
 function handleCountdownExpire() {
     ui.showTimeEndedModal(currentOperation.x, currentOperation.y, currentOperation.result);
+}
+
+/**
+ * Exit the game and return to the landing page.
+ */
+function exitGame() {
+    countdown.stop();
+    ui.hideAllModals();
+    window.location.href = 'index.html';
 }
 
 /**

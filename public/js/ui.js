@@ -32,7 +32,6 @@ const modalNok = document.getElementById("modal-nok");
 const modalNokRes = document.getElementById("nok-row-02");
 const modalTimeEnded = document.getElementById("modal-time-ended");
 const modalTimeEndedRes = document.getElementById("te-row-02");
-const modalWelcome = document.getElementById("modal-welcome");
 
 /**
  * Display the current operation in the calc-box.
@@ -102,9 +101,7 @@ export function showTimeEndedModal(x, y, result) {
 /**
  * Show the welcome modal.
  */
-export function showWelcomeModal() {
-    modalWelcome.style.display = "block";
-}
+// showWelcomeModal removed — welcome screen is now the landing page (index.html)
 
 /**
  * Hide all modals.
@@ -113,7 +110,6 @@ export function hideAllModals() {
     modalOk.style.display = "none";
     modalNok.style.display = "none";
     modalTimeEnded.style.display = "none";
-    modalWelcome.style.display = "none";
 }
 
 /**
@@ -146,5 +142,15 @@ export function bindModalClose(onModalClose) {
     modalOk.addEventListener("click", onModalClose);
     modalNok.addEventListener("click", onModalClose);
     modalTimeEnded.addEventListener("click", onModalClose);
-    modalWelcome.addEventListener("click", onModalClose);
+}
+
+/**
+ * Bind the exit button to navigate back to the landing page.
+ * @param {Function} onExit - Callback invoked when the exit button is clicked
+ */
+export function bindExitButton(onExit) {
+    const btnExit = document.getElementById('btn-exit');
+    if (btnExit) {
+        btnExit.addEventListener('click', onExit);
+    }
 }
