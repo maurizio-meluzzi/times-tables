@@ -18,144 +18,41 @@
 -->
 <html lang="it">
 	<head>
-		<title>Le Tabelline</title>
+		<title data-i18n="page.title.landing">Le Tabelline</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/timesTables.css">
-		<style>
-			/* ---- Landing page layout ---- */
-			body {
-				min-height: 100dvh;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				gap: clamp(16px, 4vw, 40px);
-				padding: clamp(24px, 5vw, 60px) clamp(16px, 6vw, 80px);
-				box-sizing: border-box;
-			}
-
-			.landing-hero {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: clamp(10px, 2.5vw, 28px);
-				text-align: center;
-			}
-
-			.landing-hero img {
-				width: clamp(80px, 20vw, 220px);
-				height: auto;
-			}
-
-			.landing-title {
-				font-size: clamp(2rem, 8vw, 5rem);
-				font-weight: bold;
-				color: #821f9d;
-				line-height: 1.1;
-				margin: 0;
-			}
-
-			.landing-subtitle {
-				font-size: clamp(1rem, 3vw, 1.6rem);
-				color: #555;
-				max-width: 560px;
-				line-height: 1.5;
-				margin: 0;
-			}
-
-			.btn-play {
-				display: inline-block;
-				padding: clamp(14px, 3vw, 22px) clamp(40px, 8vw, 80px);
-				background-color: #821f9d;
-				color: #fff;
-				font-size: clamp(1.3rem, 4vw, 2.2rem);
-				font-weight: bold;
-				border-radius: clamp(12px, 3vw, 40px);
-				text-decoration: none;
-				letter-spacing: 0.05em;
-				box-shadow: 0 4px 16px rgba(130, 31, 157, 0.3);
-				transition: background-color 0.15s ease, box-shadow 0.15s ease;
-				min-width: 44px;
-				min-height: 44px;
-			}
-
-			.btn-play:hover,
-			.btn-play:active {
-				background-color: #6a1882;
-				box-shadow: 0 6px 24px rgba(130, 31, 157, 0.45);
-			}
-
-			.landing-footer {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: clamp(6px, 1.5vw, 14px);
-				text-align: center;
-				font-size: clamp(0.75rem, 2vw, 1rem);
-				color: #888;
-				margin-top: auto;
-			}
-
-			.landing-footer a {
-				color: #821f9d;
-				text-decoration: underline;
-			}
-
-			/* Landscape compact adjustment */
-			@media (orientation: landscape) and (max-height: 500px) {
-				body {
-					flex-direction: row;
-					flex-wrap: wrap;
-					justify-content: center;
-					gap: clamp(8px, 2vw, 24px);
-					padding: 12px clamp(16px, 4vw, 40px);
-				}
-
-				.landing-hero {
-					flex-direction: row;
-					text-align: left;
-					flex-wrap: wrap;
-					justify-content: center;
-				}
-
-				.landing-hero img {
-					width: clamp(50px, 10vh, 120px);
-				}
-
-				.landing-title {
-					font-size: clamp(1.4rem, 5vh, 3rem);
-				}
-
-				.landing-subtitle {
-					font-size: clamp(0.85rem, 2.2vh, 1.2rem);
-				}
-			}
-		</style>
+		<link rel="stylesheet" href="css/landing.css">
 	</head>
 
 	<body>
 		<div class="landing-hero">
-			<img src="imgs/ok.png" alt="Personaggio felice">
-			<h1 class="landing-title">Le Tabelline</h1>
-			<p class="landing-subtitle">
+			<img src="imgs/ok.png" alt="Personaggio felice" data-i18n="landing.imgAlt">
+			<h1 class="landing-title" data-i18n="landing.title">Le Tabelline</h1>
+			<p class="landing-subtitle" data-i18n="landing.subtitle">
 				Allenati con le tabelline in modo divertente!
 				Rispondi alle domande prima che il tempo scada,
 				usando il tastierino sullo schermo.
 			</p>
 		</div>
 
-		<a href="game.html" class="btn-play">GIOCA</a>
+		<a href="game.html" class="btn-play" data-i18n="landing.play">GIOCA</a>
+
+		<div id="lang-selector">
+			<span data-lang="it" class="lang-flag">🇮🇹</span>
+			<span data-lang="en" class="lang-flag">🇬🇧</span>
+		</div>
 
 		<!-- <a href="settings.html">Impostazioni</a> -->
 
 		<footer class="landing-footer">
-			<p>Questa applicazione non utilizza cookie.</p>
-			<p>
+			<p data-i18n="landing.cookie">Questa applicazione non utilizza cookie.</p>
+			<p data-i18n="landing.license">
 				Software libero distribuito sotto licenza
 				<a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener">GNU GPL v3</a>.
 				Copyright &copy; 2025 Maurizio Meluzzi.
 			</p>
 		</footer>
 	</body>
+
+	<script type="module" src="js/landing.js"></script>
 </html>
