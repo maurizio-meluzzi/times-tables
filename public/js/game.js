@@ -25,22 +25,23 @@ import * as engine from './engine.js';
 import * as countdown from './countdown.js';
 import * as input from './input.js';
 import * as ui from './ui.js';
-
-// Tables included in the current session (any subset of 1–12)
-const sessionTables = [1, 2, 3, 4];
-// Max second factor: 10 for beginners, 11 or 12 for full tables
-const sessionMaxFactor = 10;
+import { loadSettings } from './settings.js';
 
 // Game state
 let currentOperation = null;
 let givenDigits = 0;
+let sessionTickDuration = 1000;
 
 /**
  * Initialize the game.
  */
 export function init() {
+    // Load settings from localStorage
+    const settings = loadSettings();
+    sessionTickDuration = settings.tickDuration;
+
     // Initialise the operation engine for this session
-    engine.initEngine({ tables: sessionTables, maxFactor: sessionMaxFactor });
+    engine.initEngine({ tables: settings.tables, maxFactor: settings.maxFactor });
 
     // Bind input handlers
     input.init(handleDigitPress);
@@ -70,8 +71,8 @@ function startNewQuestion() {
     ui.clearResult();
     ui.resetCountdownCells();
     
-    // Start countdown (10 ticks, 1 second each)
-    countdown.start(10, handleCountdownTick, handleCountdownExpire);
+    // Start countdown (10 ticks, tickDuration ms each)
+    countdown.start(10, handleCountdownTick, handleCountdownExpire, sessionTickDuration);
 }
 
 /**

@@ -60,6 +60,10 @@ body {
 	height: auto;
 }
 
+.landing-hero-top {
+	display: contents;
+}
+
 .landing-title {
 	font-size: clamp(2rem, 8vw, 5rem);
 	font-weight: bold;
@@ -106,10 +110,13 @@ body {
 	display: flex;
 	gap: clamp(8px, 2vw, 16px);
 	justify-content: center;
+	position: fixed;
+	top: clamp(12px, 3vw, 24px);
+	right: clamp(12px, 3vw, 24px);
 }
 
 .lang-flag {
-	font-size: clamp(1.5rem, 5vw, 2.5rem);
+	font-size: clamp(1.22rem, 4vw, 2rem);
 	cursor: pointer;
 	opacity: 0.45;
 	transition: opacity 0.15s ease, transform 0.15s ease;
@@ -159,30 +166,48 @@ body {
    ============================================================ */
 
 @media (orientation: landscape) and (max-height: 500px) {
-	body {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: clamp(8px, 2vw, 24px);
-		padding: 12px clamp(16px, 4vw, 40px);
-	}
 
-	.landing-hero {
-		flex-direction: row;
-		text-align: left;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
+    body {
+        flex-direction: column;
+        justify-content: center;
+        gap: clamp(6px, 1.5vh, 16px);
+        padding: 8px clamp(16px, 4vw, 40px);
+    }
 
-	.landing-hero img {
-		width: clamp(50px, 10vh, 120px);
-	}
+    .landing-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: clamp(10px, 2vw, 24px);
+        justify-content: center;
+    }
 
-	.landing-title {
-		font-size: clamp(1.4rem, 5vh, 3rem);
-	}
+    .landing-hero-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: clamp(10px, 2vw, 24px);
+    }
 
-	.landing-subtitle {
-		font-size: clamp(0.85rem, 2.2vh, 1.2rem);
-	}
+    .landing-hero img {
+        width: clamp(70px, 13vh, 140px);
+    }
+
+    .landing-title {
+        font-size: clamp(1.6rem, 6vh, 3rem);
+    }
+
+    .landing-subtitle {
+        font-size: clamp(0.85rem, 2.5vh, 1.2rem);
+    }
+
+    .landing-footer {
+        font-size: clamp(0.65rem, 1.8vh, 0.85rem);
+        margin-top: 0;
+        gap: 4px;
+    }
+
+    .lang-flag {
+        font-size: clamp(1rem, 3vh, 1.5rem);
+    }
 }
