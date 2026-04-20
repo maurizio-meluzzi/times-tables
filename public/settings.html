@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  Le Tabelline - Times Tables learning game for children
+  Copyright (C) 2025  Maurizio Meluzzi
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="it">
+	<head>
+		<title data-i18n="page.title.settings">Impostazioni</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/landing.css">
+		<link rel="stylesheet" href="css/settings.css">
+	</head>
+
+	<body>
+		<div class="settings-container">
+
+			<a href="index.html" class="settings-back-link" data-i18n="settings.backHome">← Torna alla home</a>
+
+			<h1 class="settings-title" data-i18n="settings.title">Impostazioni</h1>
+
+			<!-- Sezione 1: Tabelline abilitate -->
+			<section class="settings-section">
+				<h2 data-i18n="settings.tables.heading">Tabelline abilitate</h2>
+				<div class="settings-tables-grid">
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-1" data-table="1">
+						<label for="table-1">1</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-2" data-table="2">
+						<label for="table-2">2</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-3" data-table="3">
+						<label for="table-3">3</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-4" data-table="4">
+						<label for="table-4">4</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-5" data-table="5">
+						<label for="table-5">5</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-6" data-table="6">
+						<label for="table-6">6</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-7" data-table="7">
+						<label for="table-7">7</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-8" data-table="8">
+						<label for="table-8">8</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-9" data-table="9">
+						<label for="table-9">9</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-10" data-table="10">
+						<label for="table-10">10</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-11" data-table="11">
+						<label for="table-11">11</label>
+					</div>
+					<div class="settings-table-item">
+						<input type="checkbox" id="table-12" data-table="12">
+						<label for="table-12">12</label>
+					</div>
+				</div>
+				<p id="tables-min-warning" class="settings-warning" hidden data-i18n="settings.tables.minOne">
+					Almeno una tabellina deve essere abilitata.
+				</p>
+			</section>
+
+			<!-- Sezione 2: Fattore massimo -->
+			<section class="settings-section">
+				<h2 data-i18n="settings.maxFactor.heading">Fattore massimo</h2>
+				<div class="settings-radio-group">
+					<div class="settings-radio-item">
+						<input type="radio" name="maxFactor" id="mf-10" value="10">
+						<label for="mf-10">10</label>
+					</div>
+					<div class="settings-radio-item">
+						<input type="radio" name="maxFactor" id="mf-11" value="11">
+						<label for="mf-11">11</label>
+					</div>
+					<div class="settings-radio-item">
+						<input type="radio" name="maxFactor" id="mf-12" value="12">
+						<label for="mf-12">12</label>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sezione 3: Velocità del gioco -->
+			<section class="settings-section">
+				<h2 data-i18n="settings.tickDuration.heading">Velocità del gioco</h2>
+				<div class="settings-speed-labels">
+					<span data-i18n="settings.tickDuration.fast">Veloce</span>
+					<span data-i18n="settings.tickDuration.normal">Normale</span>
+					<span data-i18n="settings.tickDuration.slow">Lento</span>
+				</div>
+				<input type="range" id="tick-duration" min="500" max="2000" step="100">
+				<p class="settings-speed-value-row">
+					<span id="tick-duration-value"></span> ms
+				</p>
+			</section>
+
+		</div>
+
+		<div id="lang-selector">
+			<span data-lang="it" class="lang-flag">🇮🇹</span>
+			<span data-lang="en" class="lang-flag">🇬🇧</span>
+		</div>
+
+	</body>
+
+	<script type="module" src="js/settings-page.js"></script>
+</html>

@@ -1,0 +1,182 @@
+/*
+ * Le Tabelline - Times Tables learning game for children
+ * Copyright (C) 2025  Maurizio Meluzzi
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/* ============================================================
+   SETTINGS PAGE — complementary to landing.css
+   ============================================================ */
+
+.settings-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 5vw, 48px);
+    padding: clamp(20px, 5vw, 48px) clamp(16px, 6vw, 48px);
+}
+
+/* ─── Back link ─────────────────────────────────────────────── */
+
+.settings-back-link {
+    color: #821f9d;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    text-decoration: underline;
+    align-self: flex-start;
+}
+
+/* ─── Title ─────────────────────────────────────────────────── */
+
+.settings-title {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    font-weight: bold;
+    color: #821f9d;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* ─── Sections ──────────────────────────────────────────────── */
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2.5vw, 20px);
+    border-top: 2px solid rgba(130, 31, 157, 0.2);
+    padding: clamp(16px, 3vw, 28px) clamp(14px, 3vw, 24px) clamp(14px, 3vw, 24px);
+    background-color: #ffdcef;
+    border-radius: clamp(8px, 2vw, 16px);
+}
+
+.settings-section h2 {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    font-weight: bold;
+    color: #821f9d;
+    margin: 0;
+}
+
+.settings-section p {
+    font-weight: normal;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+}
+
+/* ─── Tabelline checkboxes grid ─────────────────────────────── */
+
+.settings-tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: clamp(8px, 2vw, 16px);
+}
+
+.settings-table-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.settings-table-item input[type="checkbox"] {
+    width: 44px;
+    height: 44px;
+    accent-color: #821f9d;
+    cursor: pointer;
+    margin: 0;
+}
+
+.settings-table-item label {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: bold;
+    color: #821f9d;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ─── Warning message ───────────────────────────────────────── */
+
+.settings-warning {
+    color: #c0392b;
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+    margin: 0;
+}
+
+/* ─── maxFactor radio group ─────────────────────────────────── */
+
+.settings-radio-group {
+    display: flex;
+    gap: clamp(16px, 4vw, 32px);
+    flex-wrap: wrap;
+}
+
+.settings-radio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.settings-radio-item input[type="radio"] {
+    width: 44px;
+    height: 44px;
+    accent-color: #821f9d;
+    cursor: pointer;
+    margin: 0;
+}
+
+.settings-radio-item label {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: bold;
+    color: #821f9d;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ─── Speed slider ──────────────────────────────────────────── */
+
+.settings-speed-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #555;
+}
+
+#tick-duration {
+    width: 100%;
+    accent-color: #821f9d;
+    cursor: pointer;
+    height: 44px;
+}
+
+.settings-speed-value-row {
+    margin: 0;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: bold;
+    color: #821f9d;
+    text-align: center;
+}
+
+/* ─── Language selector (positioned fixed like landing) ─────── */
+
+#lang-selector {
+    position: fixed;
+    top: clamp(12px, 3vw, 24px);
+    right: clamp(12px, 3vw, 24px);
+}
+
+#lang-selector .lang-flag {
+    font-size: clamp(1.22rem, 4vw, 2rem);
+}
