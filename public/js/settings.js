@@ -28,6 +28,7 @@ export const DEFAULT_SETTINGS = Object.freeze({
     tables: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     maxFactor: 10,
     tickDuration: 1000,
+    weighted: false,
 });
 
 /**
@@ -44,6 +45,7 @@ export function loadSettings() {
             tables: Array.isArray(parsed.tables) ? parsed.tables : [...DEFAULT_SETTINGS.tables],
             maxFactor: typeof parsed.maxFactor === 'number' ? parsed.maxFactor : DEFAULT_SETTINGS.maxFactor,
             tickDuration: typeof parsed.tickDuration === 'number' ? parsed.tickDuration : DEFAULT_SETTINGS.tickDuration,
+            weighted: typeof parsed.weighted === 'boolean' ? parsed.weighted : DEFAULT_SETTINGS.weighted,
         };
     } catch {
         return { ...DEFAULT_SETTINGS, tables: [...DEFAULT_SETTINGS.tables] };
