@@ -50,6 +50,9 @@ export default {
     'settings.tickDuration.normal':   'Normal',
     'settings.tickDuration.slow':     'Slow',
     'landing.settings':               '⚙ Settings',
+    'settings.weighted.heading':      'Focused practice',
+    'settings.weighted.description':  'When on, the multiplications you find harder come up more often. The game notices which ones trip you up and brings them back, so you can master them.',
+    'settings.weighted.label':        'Turn on focused practice',
     'page.title.instructions':        'How to play',
     'instructions.backHome':          '← Back to home',
     'instructions.title':             'How to play',
@@ -61,4 +64,6 @@ export default {
     'instructions.section3.body':     'Also in Settings, you can choose how high the multiplication factor goes: up to ×10, ×11, or ×12. For beginners, ×10 is plenty. The 11 and 12 times tables are switched on automatically when you select the matching factor, so you will never get a question on a table that is not yet enabled.',
     'instructions.section4.heading':  'Game speed',
     'instructions.section4.body':     'You can adjust how much time is allowed for each answer. Slow mode gives more time to think — great when you are still learning. Fast mode is a challenge for those who already know their tables and want to sharpen their speed. You can change the speed at any time from the Settings page.',
+    'instructions.section5.heading':  'Focused practice',
+    'instructions.section5.body':     'From the settings you can turn on focused practice: when it\'s on, the game becomes a little personal coach. It remembers which multiplications you got right and which you didn\'t, and brings back more often the ones you miss or run out of time on. The ones you already know well show up less, but they don\'t disappear: they come back now and then to keep you sharp. The game gives more weight to recent mistakes: if you used to miss 7×8 last week but know it now, focused practice notices and stops pushing it. When it\'s off, the game keeps no record of anything: answers are saved only if you choose this mode, and they stay on your device.',
 };

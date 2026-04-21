@@ -50,6 +50,9 @@ export default {
     'settings.tickDuration.normal':   'Normale',
     'settings.tickDuration.slow':     'Lento',
     'landing.settings':               '⚙ Impostazioni',
+    'settings.weighted.heading':      'Allenamento mirato',
+    'settings.weighted.description':  'Quando è attivo, le moltiplicazioni più difficili per te tornano più spesso. Il gioco si accorge di quali ti danno filo da torcere e te le ripropone, così le impari meglio.',
+    'settings.weighted.label':        'Attiva allenamento mirato',
     'page.title.instructions':        'Come si gioca',
     'instructions.backHome':          '← Torna alla home',
     'instructions.title':             'Come si gioca',
@@ -61,4 +64,6 @@ export default {
     'instructions.section3.body':     'Sempre dalle Impostazioni puoi scegliere fino a che numero arrivano le operazioni: ×10, ×11 o ×12. Per chi inizia, ×10 è più che sufficiente. Le tabelline dell’11 e del 12 si attivano automaticamente quando scegli il fattore corrispondente, così non rischi di ricevere domande su numeri ancora non abilitati.',
     'instructions.section4.heading':  'Velocità del gioco',
     'instructions.section4.body':     'Puoi regolare il tempo a disposizione per ogni risposta. La modalità lenta lascia più spazio per ragionare — ideale quando si sta ancora imparando. La modalità veloce è una sfida per chi conosce già le tabelline e vuole migliorare la prontezza di risposta. Puoi cambiare la velocità in qualsiasi momento dalla pagina Impostazioni.',
+    'instructions.section5.heading':  'Allenamento mirato',
+    'instructions.section5.body':     'Dalle impostazioni puoi attivare l\'allenamento mirato: quando è attivo, il gioco diventa un piccolo coach personale. Ricorda quali moltiplicazioni ti sono riuscite e quali no, e fa tornare più spesso quelle che sbagli o per cui finisce il tempo. Quelle che ormai sai bene compaiono meno, ma non spariscono: ogni tanto tornano per tenerti in esercizio. Il gioco dà più importanza agli errori recenti: se la scorsa settimana sbagliavi 7×8 ma ora lo sai, l\'allenamento mirato se ne accorge e smette di insistere. Quando non è attivo, invece, il gioco non tiene traccia di niente: le risposte vengono registrate solo se scegli questa modalità, e restano sul tuo dispositivo.',
 };

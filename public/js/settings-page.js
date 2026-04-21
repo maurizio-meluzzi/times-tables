@@ -77,6 +77,11 @@ function initSettingsControls() {
         sliderLabel.textContent = slider.value;
     });
     slider.addEventListener('change', handleTickDurationChange);
+
+    // --- Checkbox: weighted mode ---
+    const weightedToggle = document.getElementById('weighted-toggle');
+    weightedToggle.checked = settings.weighted;
+    weightedToggle.addEventListener('change', handleWeightedChange);
 }
 
 // ─── Event handlers ───────────────────────────────────────────────────────────
@@ -126,6 +131,12 @@ function handleMaxFactorChange(event) {
 function handleTickDurationChange(event) {
     const settings = loadSettings();
     settings.tickDuration = parseInt(event.target.value, 10);
+    saveSettings(settings);
+}
+
+function handleWeightedChange(event) {
+    const settings = loadSettings();
+    settings.weighted = event.target.checked;
     saveSettings(settings);
 }
 

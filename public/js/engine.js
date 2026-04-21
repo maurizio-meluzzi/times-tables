@@ -22,20 +22,24 @@
  * Pure module with no DOM dependencies.
  *
  * Usage:
- *   1. initEngine(2, 3, 5, 7) — call once at the start of each game session,
- *      passing the table numbers to include (any subset of 1–12).
+ *   1. initEngine({ tables, maxFactor, weighted }) — call once per game session.
  *   2. generateOperation() — call each time a new question is needed;
- *      returns the same { x, y, result, resultDigits } object as before.
+ *      returns { x, y, result, resultDigits }.
  *
  * Randomisation strategy: shuffled-deck (Fisher-Yates).
- * The full list of operations is shuffled and served one by one.
- * When the deck is exhausted it is reshuffled, guaranteeing that every
- * operation appears with equal frequency before any repeats.
+ * In weighted mode, pairs with high decay-weight get extra copies in the deck.
+ * When the deck is exhausted it is rebuilt with fresh weights (self-healing).
  */
 
+import { loadAnswers } from './answers.js';
+import { computeCopiesForPair, getWeightConfig } from './weightEngine.js';
+
 // Module-level state
-let _operationList = [];   // all operations for the current session
+let _operationList = [];   // canonical list — one entry per pair, used in non-weighted mode
 let _shuffledQueue = [];   // working deck — items are popped from the end
+let _tables        = [];   // stored for weighted refill
+let _clampedMax    = 12;   // stored for weighted refill
+let _weighted      = false;
 
 /**
  * Build the flat list of all operations for the given tables.
@@ -77,18 +81,68 @@ function _shuffle(arr) {
 }
 
 /**
+ * Build a weighted deck by inserting multiple copies of each operation
+ * proportional to its exponential-decay weight from answer history.
+ * Pairs with weight ≤ 0 always get exactly 1 copy (minimum guaranteed).
+ * Only answers for pairs currently in the deck are considered.
+ *
+ * @param {number[]} tables
+ * @param {number} maxFactor
+ * @returns {Array<{x,y,result,resultDigits}>}
+ */
+function _buildWeightedDeck(tables, maxFactor) {
+    const config = getWeightConfig();
+    const allAnswers = loadAnswers();
+
+    // Build a Set of canonical pair keys present in the current deck
+    const pairKeys = new Set();
+    for (const t of tables) {
+        for (let f = 1; f <= maxFactor; f++) {
+            pairKeys.add(`${t}x${f}`);
+        }
+    }
+
+    // Filter answers to only those whose (a, b) pair is in the current deck
+    const filteredAnswers = allAnswers.filter(
+        r => pairKeys.has(`${r.a}x${r.b}`)
+    );
+
+    const deck = [];
+    for (const t of tables) {
+        for (let factor = 1; factor <= maxFactor; factor++) {
+            const result = t * factor;
+            const op = { x: t, y: factor, result, resultDigits: String(result).length };
+            const copies = computeCopiesForPair(t, factor, filteredAnswers, config);
+            for (let c = 0; c < copies; c++) {
+                deck.push(op);
+            }
+        }
+    }
+    return deck;
+}
+
+/**
  * Initialise the engine for a new game session.
  * Call once per session before the first generateOperation() call.
  *
  * @param {Object} config
- * @param {number[]} config.tables         - Table numbers to include (any subset of 1–12).
- * @param {number}  [config.maxFactor=12]  - Upper bound for the second factor: 10, 11, or 12.
- *                                           Use 10 for beginners, 12 for full tables.
+ * @param {number[]} config.tables              - Table numbers to include (any subset of 1–12).
+ * @param {number}  [config.maxFactor=12]       - Upper bound for the second factor: 10, 11, or 12.
+ * @param {boolean} [config.weighted=false]     - Whether to use weighted deck mode.
  */
-export function initEngine({ tables, maxFactor = 12 }) {
+export function initEngine({ tables, maxFactor = 12, weighted = false }) {
     const clampedMax = [10, 11, 12].includes(maxFactor) ? maxFactor : 12;
+
+    // Persist for weighted refill on deck exhaustion
+    _tables     = tables;
+    _clampedMax = clampedMax;
+    _weighted   = weighted;
+
     _operationList = _buildOperationList(tables, clampedMax);
-    _shuffledQueue = _shuffle(_operationList);
+
+    _shuffledQueue = weighted
+        ? _shuffle(_buildWeightedDeck(tables, clampedMax))
+        : _shuffle(_operationList);
 }
 
 /**
@@ -100,7 +154,10 @@ export function initEngine({ tables, maxFactor = 12 }) {
 export function generateOperation() {
     // Refill and reshuffle when the deck runs out
     if (_shuffledQueue.length === 0) {
-        _shuffledQueue = _shuffle(_operationList);
+        // In weighted mode, rebuild the deck with fresh weights (self-healing)
+        _shuffledQueue = _weighted
+            ? _shuffle(_buildWeightedDeck(_tables, _clampedMax))
+            : _shuffle(_operationList);
     }
     return _shuffledQueue.pop();
 }

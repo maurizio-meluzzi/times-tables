@@ -26,11 +26,14 @@ import * as countdown from './countdown.js';
 import * as input from './input.js';
 import * as ui from './ui.js';
 import { loadSettings } from './settings.js';
+import { appendAnswer } from './answers.js';
 
 // Game state
 let currentOperation = null;
 let givenDigits = 0;
 let sessionTickDuration = 1000;
+let sessionWeighted = false;
+let questionStartTime = 0;
 
 /**
  * Initialize the game.
@@ -41,7 +44,10 @@ export function init() {
     sessionTickDuration = settings.tickDuration;
 
     // Initialise the operation engine for this session
-    engine.initEngine({ tables: settings.tables, maxFactor: settings.maxFactor });
+    engine.initEngine({ tables: settings.tables, maxFactor: settings.maxFactor, weighted: settings.weighted });
+
+    // Store weighted flag for use in answer recording
+    sessionWeighted = settings.weighted;
 
     // Bind input handlers
     input.init(handleDigitPress);
@@ -71,6 +77,9 @@ function startNewQuestion() {
     ui.clearResult();
     ui.resetCountdownCells();
     
+    // Record question start time for response-time tracking
+    questionStartTime = Date.now();
+
     // Start countdown (10 ticks, tickDuration ms each)
     countdown.start(10, handleCountdownTick, handleCountdownExpire, sessionTickDuration);
 }
@@ -103,7 +112,21 @@ function checkAnswer() {
     const userAnswer = ui.getResultValue();
     
     // Compare with correct result
-    if (userAnswer == currentOperation.result) {
+    const isCorrect = userAnswer == currentOperation.result;
+    const responseMs = Date.now() - questionStartTime;
+
+    if (sessionWeighted) {
+        appendAnswer({
+            ts: questionStartTime,
+            a:  currentOperation.x,
+            b:  currentOperation.y,
+            ua: Number(userAnswer),
+            ok: isCorrect,
+            ms: responseMs,
+        });
+    }
+
+    if (isCorrect) {
         ui.showOkModal(currentOperation.x, currentOperation.y, currentOperation.result);
     } else {
         ui.showNokModal(currentOperation.x, currentOperation.y, currentOperation.result);
@@ -122,6 +145,19 @@ function handleCountdownTick(remaining) {
  * Handle countdown expiration.
  */
 function handleCountdownExpire() {
+    const responseMs = Date.now() - questionStartTime;
+
+    if (sessionWeighted) {
+        appendAnswer({
+            ts: questionStartTime,
+            a:  currentOperation.x,
+            b:  currentOperation.y,
+            ua: -1,
+            ok: false,
+            ms: responseMs,
+        });
+    }
+
     ui.showTimeEndedModal(currentOperation.x, currentOperation.y, currentOperation.result);
 }
 
