@@ -9,10 +9,10 @@
  */
 
 export default {
-    'page.title.landing': 'Le Tabelline',
-    'page.title.game':    'Le Tabelline',
+    'page.title.landing': 'Tabelline Facili',
+    'page.title.game':    'Tabelline Facili',
     'landing.imgAlt':     'Personaggio felice',
-    'landing.title':      'Le Tabelline',
+    'landing.title':      'Tabelline Facili',
     'landing.subtitle':   'Allenati con le tabelline in modo divertente! Rispondi alle domande prima che il tempo scada, usando il tastierino sullo schermo.',
     'landing.play':       'GIOCA',
     'landing.cookie':     'Zero cookie. Zero dati. Zero pubblicità.',
@@ -33,8 +33,8 @@ export default {
     'privacy.section3.body':    'Immagini, suoni, codice e font sono tutti ospitati nel progetto stesso. Nessuna chiamata a CDN, Google Fonts, analytics o social plugin. Il tuo browser non trasmette dati a server di terzi durante l’uso dell’app.',
     'privacy.section4.heading': 'Font di sistema',
     'privacy.section4.body':    'L’app usa esclusivamente i font già presenti nel tuo dispositivo (Arial, Helvetica, sans-serif). Nessun font esterno viene scaricato.',
-    'privacy.section5.heading': 'localStorage (uso futuro, tecnico)',
-    'privacy.section5.body':    'In futuro l’app potrà salvare lo stato di gioco — preferenze e progressi — nel localStorage del browser. Si tratta di storage tecnico/funzionale: non lascia mai il dispositivo, non viene trasmesso a nessuno, non serve per profilazione o tracciamento, e può essere cancellato in qualsiasi momento dalle impostazioni del browser. Secondo le linee guida del Garante Privacy italiano e dell’EDPB, questo uso è assimilabile ai cookie tecnici ed esente da obbligo di consenso.',
+    'privacy.section5.heading': 'localStorage',
+    'privacy.section5.body':    'L’app usa il localStorage del browser per salvare le preferenze di gioco. La funzione Allenamento mirato, quando attivata, registra lo storico delle risposte per adeguare le domande ai tuoi punti deboli.<br>NOTA: si tratta di storage tecnico/funzionale; non lascia mai il dispositivo, non viene trasmesso a nessuno, non serve per profilazione o tracciamento, e può essere cancellato in qualsiasi momento dalle impostazioni del browser.<br>Secondo le linee guida del Garante Privacy italiano e dell’EDPB, questo uso è assimilabile ai cookie tecnici ed esente da obbligo di consenso.',
     'privacy.section6.heading': 'GDPR e minori',
     'privacy.section6.body':    'Non raccogliendo alcun dato personale, non sono necessarie basi giuridiche di trattamento. L’assenza totale di raccolta dati tutela in modo particolare i minori, che sono il pubblico principale di questa app.',
     'privacy.section7.heading': 'Codice aperto',

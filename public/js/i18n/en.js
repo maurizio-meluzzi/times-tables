@@ -9,10 +9,10 @@
  */
 
 export default {
-    'page.title.landing': 'Times Tables',
-    'page.title.game':    'Times Tables',
+    'page.title.landing': 'Easy Times Tables',
+    'page.title.game':    'Easy Times Tables',
     'landing.imgAlt':     'Happy character',
-    'landing.title':      'Times Tables',
+    'landing.title':      'Easy Times Tables',
     'landing.subtitle':   'Practice your times tables in a fun way! Answer the questions before time runs out, using the on-screen keypad.',
     'landing.play':       'PLAY',
     'landing.cookie':     'Zero cookies. Zero data. Zero ads.',
@@ -33,8 +33,8 @@ export default {
     'privacy.section3.body':    'Images, sounds, code, and fonts are all hosted within the project itself. No calls to CDNs, Google Fonts, analytics, or social plugins. Your browser does not send data to any third-party servers while using the app.',
     'privacy.section4.heading': 'System fonts',
     'privacy.section4.body':    'The app uses only fonts already present on your device (Arial, Helvetica, sans-serif). No external fonts are downloaded.',
-    'privacy.section5.heading': 'localStorage (future use, technical)',
-    'privacy.section5.body':    'In the future the app may save game state — preferences and progress — in the browser’s localStorage. This is technical/functional storage: it never leaves your device, is never transmitted to anyone, is not used for profiling or tracking, and can be cleared at any time from your browser settings. According to the Italian Garante Privacy and EDPB guidelines, this use is equivalent to technical cookies and exempt from consent requirements.',
+    'privacy.section5.heading': 'localStorage',
+    'privacy.section5.body':    'The app uses the browser’s localStorage to save game preferences. The Focused Practice feature, when enabled, records your answer history to adapt questions to your weak spots.<br>NOTE: this is technical/functional storage; it never leaves your device, is never transmitted to anyone, is not used for profiling or tracking, and can be cleared at any time from your browser settings.',
     'privacy.section6.heading': 'GDPR and children',
     'privacy.section6.body':    'Because no personal data is collected, no legal basis for processing is required. The complete absence of data collection also protects children, who are the primary audience of this app.',
     'privacy.section7.heading': 'Open source',
